@@ -1,0 +1,75 @@
+.intro-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5em 0 7.5em 0;
+
+    @media (min-width: 321px) and (max-width: 479px) {
+        display: none;
+    }
+
+    @media only screen and (max-width: 320px) {
+        .intro-section {
+            display: none;
+
+        }
+    }
+
+    .text-section-hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid $baseColor;
+        margin: auto;
+        padding: 0;
+        margin-bottom: 2em;
+        margin-top: 2em;
+        width: 70%;
+    }
+
+    .text-section-p {
+        width: 80%;
+        font-family: 'Roboto', sans-serif;
+        text-align: left;
+        margin: auto;
+        font-size: 1.25em;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+        line-height: 1.6;
+        letter-spacing: 1px;
+        text-align: justify;
+        &::first-line {
+            line-height: 1.1;
+        }
+        @media (min-width: 992px) and (max-width: 1199px) {
+            font-size: 1.1em;
+            margin: auto;
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            font-size: 1em;
+            margin: auto;
+        }
+
+        @media (min-width: 480px) and (max-width: 767px) {
+            font-size: 1em;
+            margin: auto;
+        }
+
+        @media (min-width: 321px) and (max-width: 479px) {
+            font-size: 15px;
+            margin: auto;
+        }
+
+        @media only screen and (max-width: 320px) {
+            font-size: .9em;
+            margin: auto;
+            top: 50%;
+            bottom: 50%;
+        }
+    }
+
+    #our-goal-span {
+        font-size: 200%;
+    }
+}

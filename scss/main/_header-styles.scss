@@ -1,0 +1,247 @@
+.logo-area {
+    @include transition-500;
+}
+
+.header-area nav#desktop-nav > ul {
+    text-align: left;
+    > li > a {
+        padding: 20px;
+        color: $white;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header-area nav#desktop-nav > ul > li > a {
+        padding: 20px 15px;
+        margin: 0 1em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .header-area nav#desktop-nav > ul > li > a {
+        padding: 20px 6px;
+        margin: 0 1em;
+    }
+}
+
+nav#desktop-nav {
+    > ul {
+        > .active > a {
+            color: $accentColor !important;
+        }
+        li {
+            display: inline-block;
+            position: relative;
+            &:hover ul {
+                opacity: 1;
+                transform: scaleY(1);
+                visibility: visible;
+            }
+            a {
+                display: block;
+                text-transform: capitalize;
+                text-decoration: none;
+                font-weight: 500;
+                @include transition-500;
+                &:hover {
+                    color: $accentColor;
+                }
+            }
+            .mega-menu-area > li {
+                &:hover > a:hover {
+                    color: $white;
+                    background: $darkBaseColor;
+                    padding-left: 10px;
+                }
+                a {
+                    padding: 8px 0;
+                    display: block;
+                    border-bottom: 1px solid $lightBaseColor;
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    li.has-child-menu {
+        position: relative;
+        > a {
+            color: $primaryTextColor;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    nav#desktop-nav > ul li a {
+        padding: 30px 12px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    nav#desktop-nav > ul li a {
+        padding: 30px 6px;
+    }
+}
+
+.header-area .stick {
+    background-color: rgba($defaultBackgroundColor, 0.98);
+    border-bottom: 1px solid $baseColor;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+    z-index: 99999999;
+    @include transition-1000;
+}
+
+@media only screen and (max-width: 767px) {
+    .header-area .main-menu-area {
+        display: none;
+    }
+    .right-nav-mobile .profile-notification {
+        position: fixed;
+        top: 12px;
+        z-index: 100;
+        right: 5px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hidden-on-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .notify-contact {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .profile-notification {
+        li {
+            margin-right: 2px !important;
+        }
+        .user-account-info-controler .user-account-img {
+            -webkit-box-flex: 3 !important;
+            -moz-flex: 3 !important;
+            -webkit-flex: 3 !important;
+            flex: 3 !important;
+        }
+    }
+}
+
+.mobile-menu-area {
+    display: none;
+}
+
+/*mean container == mobile menu area*/
+
+.mean-container {
+    .mean-bar {
+        float: none;
+        z-index: 99;
+        .meanmenu-reveal {
+            left: 0 !important;
+            right: inherit;
+        }
+        a.logo-mobile-menu {
+            text-align: right;
+            vertical-align: middle;
+            img {
+                width: 60%;
+                margin: 0, auto;
+            }
+        }
+        &::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+    }
+    .mean-nav {
+        ul li a {
+            color: $primaryTextColor;
+            font-weight: 700;
+            @include transition-500;
+
+            &:hover {
+                color: $baseColor;
+                @include transition-500;
+            }
+        }
+        > ul {
+            &::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            overflow-y: scroll;
+        }
+    }
+    .mean-bar a.logo-mobile-menu {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-sizing: border-box;
+        border-bottom: 1px solid $baseColor;
+    }
+    a.meanmenu-reveal {
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .mean-container .mean-bar a {
+        padding: 6px 16px;
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .mean-container .mean-bar .meanmenu-reveal {
+        margin-top: 5px;
+    }
+}
+
+.mean-bar + div#wrapper {
+    padding-top: 50px;
+}
+
+.profile-notification {
+    float: right;
+    margin-top: 15px;
+    > li {
+        position: relative;
+        display: inline-block;
+        margin-right: 15px;
+        top: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        margin-top: 6px;
+    }
+}
+
+
+
+/*notify-contact == need help? contact..*/
+
+.notify-contact {
+    line-height: 2.7;
+    color: #546e7a;
+    font-size: 15px;
+    span {
+        color: $accentColor;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        display: none;
+    }
+}

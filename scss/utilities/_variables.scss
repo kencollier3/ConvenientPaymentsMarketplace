@@ -1,0 +1,24 @@
+//Variables
+
+//colors
+$baseColor: #8BC34A;
+
+$darkBaseColor:  darken($baseColor, 10%);
+$lightBaseColor:  lighten($baseColor, 10%);
+$white: #f4f6f5;
+$accentColor:        #ff2d61;
+$primaryTextColor:   #212121;
+$secondaryTextColor: #757575;
+$dividerColor:       #BDBDBD;
+$defaultBackgroundColor: #444444;
+$textBaseColor: $white;
+$profileColor: #004cc6;
+$darkProfileColor: darken($profileColor, 10%);
+$lightProfileColor: lighten($profileColor, 10%);
+
+//breakpoints
+$bp-xs: only screen and (max-width: 320px);
+$bp-s: (min-width: 321px) and (max-width: 479px);
+$bp-m: (min-width: 480px) and (max-width: 767px);
+$bp-l: (min-width: 768px) and (max-width: 991px);
+$bp-xl: (min-width: 992px) and (max-width: 1199px);

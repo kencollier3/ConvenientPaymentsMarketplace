@@ -1,0 +1,103 @@
+//Mixins
+@mixin rgbaColorIn($color, $opacity: 1) {
+    $result: rgba( red($color), green($color), blue($color), $opacity);
+}
+
+//typography defauls
+@mixin default-schema {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    vertical-align: baseline;
+    background: $white;
+    color: $defaultBackgroundColor;
+}
+
+@mixin default-header-typ {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    color: $primaryTextColor;
+}
+
+@mixin main-text-shadow {
+    text-shadow: 0px 4px 3px rgba($darkBaseColor, 0.4), 0px 8px 13px rgba($darkBaseColor, 0.1), 0px 18px 23px rgba($darkBaseColor, 0.1);
+}
+
+@mixin profile-text-shadow {
+    text-shadow: 0px 4px 3px rgba($profileColor, 0.4), 0px 8px 13px rgba($profileColor, 0.1), 0px 18px 23px rgba($profileColor, 0.1);
+}
+
+
+//transition mixins
+@mixin transition($transition, $duration, $timingFunction: ease-in-out) {
+    -webkit-transition: all $duration $timingFunction;
+    -moz-transition: all $duration $timingFunction;
+    -ms-transition: all $duration $timingFunction;
+    -o-transition: all $duration $timingFunction;
+    transition: all $duration $timingFunction;
+}
+
+@mixin transition-300 {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin transition-500 {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin transition-1000 {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+// img sizing for profile page
+@mixin profile-img-default {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+//breakpoints
+@mixin breakpoint($point) {
+    @if $point==desktop {
+        @media only screen and (min-width: 1824px) {
+            @content ;
+        }
+    }
+    @else if $point==laptop {
+        @media only screen and (min-width: 1224px) {
+            @content ;
+        }
+    }
+    @else if $point==ipad {
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            @content ;
+        }
+    }
+    @else if $point==phablet {
+        @media only screen and (min-device-width: 601px) and (max-device-width: 767px) {
+            @content ;
+        }
+    }
+    @else if $point==smartphone {
+        @media (min-device-width: 320px) and (max-device-width: 600px) {
+            @content ;
+        }
+
+    }
+}

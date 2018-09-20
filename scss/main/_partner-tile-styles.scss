@@ -1,0 +1,125 @@
+.partners-section {
+    margin-top: 5em;
+    margin-bottom: 10em;
+    > .container-fluid {
+        width: 80%;
+    }
+}
+
+.single-item-grid {
+    margin-bottom: 30px;
+    @include transition-500;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    min-width: 250px;
+    .item-img img {
+        width: 100%;
+    }
+    .item-content {
+        background: #ffffff;
+        padding: 22px 30px 15px 30px;
+        border: 1px solid #e7ecf2;
+        .item-info h3 {
+            color: #263238;
+            font-size: 1.25em;
+            font-weight: 500;
+            margin-bottom: 2px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 5px;
+            white-space: nowrap;
+        }
+    }
+}
+
+.partner-name {
+    //This is for the light green line under the partners name to 
+    //light up and expand.
+    color: $defaultBackgroundColor;
+    &::after {
+        content: "";
+        /* This is necessary for the pseudo element to work. */
+        display: block;
+        /* This will put the pseudo element on its own line. */
+        margin: 0 auto;
+        /* This will center the border. */
+        width: 25%;
+        /* Change this to whatever width you want. */
+        padding-top: 5px;
+        /* This creates some space between the element and the border. */
+        border-bottom: 1px solid $dividerColor;
+        /* This creates the border. Replace black with whatever color you want. */
+        transition: transform 450ms ease-in-out;
+        transform: scaleX(1);
+    }
+}
+
+.single-item-grid:hover .item-content .item-info .partner-name::after {
+    border-bottom: 1px solid $baseColor;
+    transition: transform 350ms ease-in-out;
+    transform: scaleX(3);
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .single-item-grid .item-content .item-info h3 {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .single-item-grid .item-content .item-info h3 {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .single-item-grid .item-content .item-info h3 {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 479px) {
+    .single-item-grid .item-content .item-info h3 {
+        font-size: 1em;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+    .single-item-grid .item-content .item-info h3 {
+        font-size: 15px;
+    }
+    .partners-section {
+        .partner-container-width {
+            padding: 0;
+        }
+    }
+}
+
+.single-item-grid {
+    .item-content {
+        .item-info h3 {
+            color: #263238;
+            @include transition-500;
+
+        }
+        .item-profile .profile-title {
+            -webkit-box-flex: 1;
+            -moz-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+        }
+    }
+    &:hover {
+        -webkit-box-shadow: 0px 16px 20px 0px rgba(216, 216, 216, 0.75);
+        -moz-box-shadow: 0px 16px 20px 0px rgba(216, 216, 216, 0.75);
+        box-shadow: 0px 16px 20px 0px rgba(216, 216, 216, 0.75);
+        transition-property: box-shadow;
+        transition-timing-function: ease-in-out;
+    }
+}
